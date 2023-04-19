@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+
+<body>
+    <div class="head">
+        <h2>Your Gold : </h2>
+        <input type="number" disabled value="{{request.session.golden}}">
+    </div>
+    <div class="main">
+        <form action="/process_money" method="post">
+            {%csrf_token%}
+            <h3>Farm</h3>
+            <p>(you earn 10-20 gold)</p>
+            <input type="hidden" value="farm" name="gold">
+            <button type="submit">Find Gold</button>
+        </form>
+        <form action="/process_money" method="post">
+            {%csrf_token%}
+            <h3>Cave</h3>
+            <p>(you earn 10-20 gold)</p>
+            <input type="hidden" value="cave" name="gold">
+            <button type="submit">Find Gold</button>
+        </form>
+        <form action="/process_money" method="post">
+            {%csrf_token%}
+            <h3>House</h3>
+            <p>(you earn 10-20 gold)</p>
+            <input type="hidden" value="house" name="gold">
+            <button type="submit">Find Gold</button>
+        </form>
+        <form action="/process_money" method="post">
+            {%csrf_token%}
+            <h3>Quest</h3>
+            <p>(you earn or takes 0-50 gold)</p>
+            <input type="hidden" value="quest" name="gold">
+            <button type="submit">Find Gold</button>
+        </form>
+    </div>
+    <div class="footer">
+        <h2>Activity :</h2>
+        <div class="activity">
+
+            {%for activity in request.session.activities%}
+
+            <p class="{{activity.color}}">{{activity.name}}</p>
+            {%endfor%}
+        </div>
+    </div>
+
+</body>
+
+</html>

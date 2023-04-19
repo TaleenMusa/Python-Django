@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books & Authors</title>
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+
+<body>
+    <p>{{onebook.id}}</p>
+    <p>{{onebook.title}}</p>
+    <p>{{onebook.description}}</p>
+
+    <h1>Authors of this book :</h1>
+    {%for author in onebook.authors.all%}
+    <p>{{author.first_name}} {{author.last_name}}</p>
+    {%endfor%}
+    <form action="/authortobook/{{onebook.id}}" method="post">
+        {%csrf_token%}
+        <select name="author">
+            {%for author in allauthors%}
+            {%if author not in onebook.authors.all%}
+            <option value="{{author.id}}">{{author.first_name}} {{author.last_name}}</option>
+            {%endif%}
+            {%endfor%}
+        </select>
+        <input type="Submit" value="Add">
+    </form>
+</body>
+
+</html>

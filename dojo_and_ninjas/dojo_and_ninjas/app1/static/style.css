@@ -1,0 +1,14 @@
+main{
+    display: flex;
+    width :70%;
+    margin: 0 auto;
+    justify-content: space-around;
+}
+footer{
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+}
+ul li{
+    list-style-type: none;
+}

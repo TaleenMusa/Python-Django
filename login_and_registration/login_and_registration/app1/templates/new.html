@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+        }
+        form input {
+            display: block;
+            margin: 16px 0;
+            padding: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>First Name :</p>
+        <p>last Name :</p>
+        <p>Email :</p>
+        <p>password :</p>
+        <p>Confirm PW :</p>
+    </div>
+    <div>
+        <form action="/registration" method="post">
+            <input type="text" name="first_name">
+            <input type="text" name="last_name">
+            <input type="email" name="email">
+            <input type="password" name="password">
+            <input type="password" name="confirm">
+            <input type="Submit" value="Register">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,328 @@
+C:\Users\Lenovo\Downloads\books_and_authors_start\books_and_authors>call djangoPy3Env\Scripts\activate 
+The system cannot find the path specified.
+
+C:\Users\Lenovo\Downloads\books_and_authors_start\books_and_authors>call C:\Users\Lenovo\Desktop\Axsos\python-stack\my_environments\djangoPy3Env\Scripts\activate
+
+(djangoPy3Env) C:\Users\Lenovo\Downloads\books_and_authors_start\books_and_authors>python manage.py makemigrations
+System check identified some issues:
+
+WARNINGS:
+books_authors.Auther: (models.W042) Auto-created primary key used when not defining a primary key type, by default 'django.db.models.AutoField'.
+        HINT: Configure the DEFAULT_AUTO_FIELD setting or the BooksAuthorsConfig.default_auto_field attribute to point to a subclass of AutoField, e.g. 'django.db.models.BigAutoField'.
+books_authors.Book: (models.W042) Auto-created primary key used when not defining a primary key type, by default 'django.db.models.AutoField'.
+        HINT: Configure the DEFAULT_AUTO_FIELD setting or the BooksAuthorsConfig.default_auto_field attribute to point to a subclass of AutoField, e.g. 'django.db.models.BigAutoField'.
+Migrations for 'books_authors':
+  books_authors\migrations\0001_initial.py
+    - Create model Book
+    - Create model Auther
+
+(djangoPy3Env) C:\Users\Lenovo\Downloads\books_and_authors_start\books_and_authors>python manage.py migrate       
+System check identified some issues:
+
+WARNINGS:
+books_authors.Auther: (models.W042) Auto-created primary key used when not defining a primary key type, by default 'django.db.models.AutoField'.
+        HINT: Configure the DEFAULT_AUTO_FIELD setting or the BooksAuthorsConfig.default_auto_field attribute to point to a subclass of AutoField, e.g. 'django.db.models.BigAutoField'.
+books_authors.Book: (models.W042) Auto-created primary key used when not defining a primary key type, by default 'django.db.models.AutoField'.
+        HINT: Configure the DEFAULT_AUTO_FIELD setting or the BooksAuthorsConfig.default_auto_field attribute to point to a subclass of AutoField, e.g. 'django.db.models.BigAutoField'.
+Operations to perform:
+  Apply all migrations: admin, auth, books_authors, contenttypes, sessions
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying books_authors.0001_initial... OK
+  Applying sessions.0001_initial... OK
+
+(djangoPy3Env) C:\Users\Lenovo\Downloads\books_and_authors_start\books_and_authors>python manage.py makemigrations
+System check identified some issues:
+
+WARNINGS:
+books_authors.Author: (models.W042) Auto-created primary key used when not defining a primary key type, by default 'django.db.models.AutoField'.
+        HINT: Configure the DEFAULT_AUTO_FIELD setting or the BooksAuthorsConfig.default_auto_field attribute to point to a subclass of AutoField, e.g. 'django.db.models.BigAutoField'.
+books_authors.Book: (models.W042) Auto-created primary key used when not defining a primary key type, by default 'django.db.models.AutoField'.
+        HINT: Configure the DEFAULT_AUTO_FIELD setting or the BooksAuthorsConfig.default_auto_field attribute to point to a subclass of AutoField, e.g. 'django.db.models.BigAutoField'.
+Migrations for 'books_authors':
+  books_authors\migrations\0002_auto_20230321_1204.py
+    - Create model Author
+    - Delete model Auther
+
+(djangoPy3Env) C:\Users\Lenovo\Downloads\books_and_authors_start\books_and_authors>python manage.py migrate                                System check identified some issues:
+
+WARNINGS:
+books_authors.Author: (models.W042) Auto-created primary key used when not defining a primary key type, by default 'django.db.models.AutoField'.
+        HINT: Configure the DEFAULT_AUTO_FIELD setting or the BooksAuthorsConfig.default_auto_field attribute to point to a subclass of AutoField, e.g. 'django.db.models.BigAutoField'.
+books_authors.Book: (models.W042) Auto-created primary key used when not defining a primary key type, by default 'django.db.models.AutoField'.
+        HINT: Configure the DEFAULT_AUTO_FIELD setting or the BooksAuthorsConfig.default_auto_field attribute to point to a subclass of AutoField, e.g. 'django.db.models.BigAutoField'.
+Operations to perform:
+  Apply all migrations: admin, auth, books_authors, contenttypes, sessions
+Running migrations:
+  Applying books_authors.0002_auto_20230321_1204... OK
+
+(djangoPy3Env) C:\Users\Lenovo\Downloads\books_and_authors_start\books_and_authors>python manage.py shell  
+Python 3.10.9 (tags/v3.10.9:1dd9be6, Dec  6 2022, 20:01:21) [MSC v.1934 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from books_authors.models import*
+>>> Book.objects.create(title="C sharp", desc="old book")
+<Book: Book object (1)>
+>>> Book.objects.create(title="Java", desc="old book")
+<Book: Book object (2)>
+>>> Book.objects.create(title="Python", desc="old book")
+<Book: Book object (3)>
+>>> Book.objects.create(title="PHP", desc="old book")
+<Book: Book object (4)>
+>>> Book.objects.create(title="Ruby", desc="old book")
+<Book: Book object (5)>
+>>> Author.objects.create(first_name="Jane",last_name="Austen")
+<Author: Author object (1)>
+>>> Author.objects.create(first_name="Emily",last_name="Dickinson")
+<Author: Author object (2)>
+>>> Author.objects.create(first_name="Fyodor",last_name="Dostoevsky")
+<Author: Author object (3)>
+>>> Author.objects.create(first_name="William",last_name="Shakespeare")
+<Author: Author object (4)>
+>>> Author.objects.create(first_name="Lau",last_name="Tzu")
+<Author: Author object (5)>
+>>> exit()
+
+(djangoPy3Env) C:\Users\Lenovo\Downloads\books_and_authors_start\books_and_authors>python manage.py makemigrations
+System check identified some issues:
+
+WARNINGS:
+books_authors.Author: (models.W042) Auto-created primary key used when not defining a primary key type, by default 'django.db.models.AutoField'.
+        HINT: Configure the DEFAULT_AUTO_FIELD setting or the BooksAuthorsConfig.default_auto_field attribute to point to a subclass of AutoField, e.g. 'django.db.models.BigAutoField'.
+books_authors.Book: (models.W042) Auto-created primary key used when not defining a primary key type, by default 'django.db.models.AutoField'.
+        HINT: Configure the DEFAULT_AUTO_FIELD setting or the BooksAuthorsConfig.default_auto_field attribute to point to a subclass of AutoField, e.g. 'django.db.models.BigAutoField'.
+Migrations for 'books_authors':
+  books_authors\migrations\0003_author_notes.py
+    - Add field notes to author
+
+(djangoPy3Env) C:\Users\Lenovo\Downloads\books_and_authors_start\books_and_authors>python manage.py migrate        
+System check identified some issues:
+
+WARNINGS:
+books_authors.Author: (models.W042) Auto-created primary key used when not defining a primary key type, by default 'django.db.models.AutoField'.
+        HINT: Configure the DEFAULT_AUTO_FIELD setting or the BooksAuthorsConfig.default_auto_field attribute to point to a subclass of AutoField, e.g. 'django.db.models.BigAutoField'.
+books_authors.Book: (models.W042) Auto-created primary key used when not defining a primary key type, by default 'django.db.models.AutoField'.
+        HINT: Configure the DEFAULT_AUTO_FIELD setting or the BooksAuthorsConfig.default_auto_field attribute to point to a subclass of AutoField, e.g. 'django.db.models.BigAutoField'.
+Operations to perform:
+  Apply all migrations: admin, auth, books_authors, contenttypes, sessions
+Running migrations:
+  Applying books_authors.0003_author_notes... OK
+
+(djangoPy3Env) C:\Users\Lenovo\Downloads\books_and_authors_start\books_and_authors>python manage.py shell                                  Python 3.10.9 (tags/v3.10.9:1dd9be6, Dec  6 2022, 20:01:21) [MSC v.1934 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> book_to_update = Book.objects.get(id=1)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'Book' is not defined
+>>> from books_authors.models import *
+>>> book_to_update = Book.objects.get(id=1)
+>>> book_to_update.title = 'C#'
+>>> print(book_to_update.title)
+C#
+>>> author_to_update = Author.objects.get(id=4)
+>>> author_to_update.first_name = 'Bill'
+>>> print(author_to_update.first_name)
+Bill
+>>> this_book = Book.objects.get(id=1)
+>>> this_book1 = Book.objects.get(id=2) 
+>>> this_publisher = Publisher.objects.get(id=1)        
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'Publisher' is not defined
+>>>
+>>>
+>>> this_publisher.books.add(this_book)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'this_publisher' is not defined
+>>> this_book = Book.objects.get(id=1)  
+>>> this_book1 = Book.objects.get(id=2) 
+>>> this_publisher = Author.objects.get(id=1)   
+>>>
+>>>
+>>> this_publisher.books.add(this_book)
+>>> this_publisher.books.add(this_book1)
+>>> print(this_publisher)
+Author object (1)
+>>> print(this_publisher.books) 
+books_authors.Book.None
+>>> print(this_publisher.book)  
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Author' object has no attribute 'book'
+>>> print(this_publisher.Book) 
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Author' object has no attribute 'Book'
+>>> print(this_publisher.books) 
+books_authors.Book.None
+>>> author = Author.objects.get(id=1) 
+>>> books_by_author = author.books.all()
+>>> for book in books_by_author :
+...  print(book.title)
+... 
+C sharp
+Java
+>>> this_book = Book.objects.get(id=1)
+>>> this_book1 = Book.objects.get(id=2) 
+>>> this_book2 = Book.objects.get(id=3) 
+>>> this_publisher = Author.objects.get(id=2)   
+>>>
+>>>
+>>> this_publisher.books.add(this_book)
+>>> this_publisher.books.add(this_book1)
+>>> this_publisher.books.add(this_book2)
+>>> this_book = Book.objects.get(id=1)
+>>> this_book1 = Book.objects.get(id=2) 
+>>> this_book2 = Book.objects.get(id=3)
+>>> this_book3 = Book.objects.get(id=4)
+>>> this_publisher = Author.objects.get(id=3)
+>>>
+>>>
+>>> this_publisher.books.add(this_book)
+>>> this_publisher.books.add(this_book1)
+>>> this_publisher.books.add(this_book2)
+>>> this_publisher.books.add(this_book3)
+>>> 
+>>> 
+KeyboardInterrupt
+>>> this_book = Book.objects.all()
+>>> this_publisher = Author.objects.get(id=4)   
+>>>
+>>> this_publisher.books.add(this_book)
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Desktop\Axsos\python-stack\my_environments\djangoPy3Env\lib\site-packages\django\db\models\fields\__init__.py", line 1823, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'QuerySet'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "C:\Users\Lenovo\Desktop\Axsos\python-stack\my_environments\djangoPy3Env\lib\site-packages\django\db\models\fields\related_descriptors.py", line 950, in add
+    self._add_items(
+  File "C:\Users\Lenovo\Desktop\Axsos\python-stack\my_environments\djangoPy3Env\lib\site-packages\django\db\models\fields\related_descriptors.py", line 1126, in _add_items
+    target_ids = self._get_target_ids(target_field_name, objs)
+  File "C:\Users\Lenovo\Desktop\Axsos\python-stack\my_environments\djangoPy3Env\lib\site-packages\django\db\models\fields\related_descriptors.py", line 1073, in _get_target_ids
+    target_ids.add(target_field.get_prep_value(obj))
+  File "C:\Users\Lenovo\Desktop\Axsos\python-stack\my_environments\djangoPy3Env\lib\site-packages\django\db\models\fields\related.py", line 977, in get_prep_value
+    return self.target_field.get_prep_value(value)
+  File "C:\Users\Lenovo\Desktop\Axsos\python-stack\my_environments\djangoPy3Env\lib\site-packages\django\db\models\fields\__init__.py", line 1825, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <QuerySet [<Book: Book object (1)>, <Book: Book object (2)>, <Book: Book object (3)>, <Book: Book object (4)>, <Book: Book object (5)>]>.
+>>> this_book = Book.objects.all()
+>>> this_publisher = Author.objects.get(id=4)   
+>>>
+>>> this_publisher.books.add(this_book)
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Desktop\Axsos\python-stack\my_environments\djangoPy3Env\lib\site-packages\django\db\models\fields\__init__.py", line 1823, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'QuerySet'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "C:\Users\Lenovo\Desktop\Axsos\python-stack\my_environments\djangoPy3Env\lib\site-packages\django\db\models\fields\related_descriptors.py", line 950, in add
+    self._add_items(
+  File "C:\Users\Lenovo\Desktop\Axsos\python-stack\my_environments\djangoPy3Env\lib\site-packages\django\db\models\fields\related_descriptors.py", line 1126, in _add_items
+    target_ids = self._get_target_ids(target_field_name, objs)
+  File "C:\Users\Lenovo\Desktop\Axsos\python-stack\my_environments\djangoPy3Env\lib\site-packages\django\db\models\fields\related_descriptors.py", line 1073, in _get_target_ids
+    target_ids.add(target_field.get_prep_value(obj))
+  File "C:\Users\Lenovo\Desktop\Axsos\python-stack\my_environments\djangoPy3Env\lib\site-packages\django\db\models\fields\related.py", line 977, in get_prep_value
+    return self.target_field.get_prep_value(value)
+  File "C:\Users\Lenovo\Desktop\Axsos\python-stack\my_environments\djangoPy3Env\lib\site-packages\django\db\models\fields\__init__.py", line 1825, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <QuerySet [<Book: Book object (1)>, <Book: Book object (2)>, <Book: Book object (3)>, <Book: Book object (4)>, <Book: Book object (5)>]>.
+>>>
+>>> this_book = Book.objects.get(id=1)
+>>> this_book1 = Book.objects.get(id=2) 
+>>> this_book2 = Book.objects.get(id=3)
+>>> this_book3 = Book.objects.get(id=4)
+>>> this_book4 = Book.objects.get(id=5)
+>>> this_publisher = Author.objects.get(id=5)   
+>>>
+>>>
+>>> this_publisher.books.add(this_book)
+>>> this_publisher.books.add(this_book1)
+>>> this_publisher.books.add(this_book2)
+>>> this_publisher.books.add(this_book3)
+>>> this_publisher.books.add(this_book4
+... 
+... 
+... this_book = Book.objects.get(id=1)
+  File "<console>", line 1
+    this_publisher.books.add(this_book4
+                            ^
+SyntaxError: '(' was never closed
+>>> this_book1 = Book.objects.get(id=2) 
+>>> this_book2 = Book.objects.get(id=3)
+>>> this_book3 = Book.objects.get(id=4)
+>>> this_book4 = Book.objects.get(id=5)
+>>> this_publisher = Author.objects.get(id=5)   
+>>>
+>>>
+>>> this_publisher.books.add(this_book)
+>>> this_publisher.books.add(this_book1)
+>>> this_publisher.books.add(this_book2)
+>>> this_publisher.books.add(this_book3)
+>>> this_publisher.books.add(this_book4)
+>>> 
+>>> this_book = Book.objects.get(id=3)   
+>>> authors= this_book.authors.all()
+>>> for author in authors:
+...  print(author.first_name, author.last_name)
+... 
+Emily Dickinson
+Fyodor Dostoevsky
+Lau Tzu
+>>>
+>>> book = Book.objects.get(id=3)
+>>> first_author = book.authors.first()
+>>>
+>>>
+>>> book.authors.remove(first_author)
+>>> 
+>>> this_book = Book.objects.get(id=2)
+>>> this_publisher = Author.objects.get(id=5)   
+>>> this_publisher.books.add(this_book)
+>>> Author.objects.get(id=3)
+<Author: Author object (3)>
+>>> books.all()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'books' is not defined
+>>> author = Author.objects.all()[2]
+>>> books = authors.Book.all()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'QuerySet' object has no attribute 'Book'
+>>> author = Author.objects.all()[2]
+>>> books_to_See = authors.books.all()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'QuerySet' object has no attribute 'books'
+>>> books = Book.objects.filter(authors__id=3)
+>>> print(books)
+<QuerySet [<Book: Book object (1)>, <Book: Book object (2)>, <Book: Book object (3)>, <Book: Book object (4)>]>
+>>> books = Book.objects.filter(authors__id=5) 
+>>> print(books)
+<QuerySet [<Book: Book object (1)>, <Book: Book object (2)>, <Book: Book object (3)>, <Book: Book object (4)>, <Book: Book object (5)>]>
+>>>

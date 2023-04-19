@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Shows</title>
+</head>
+
+<body>
+    <h1>All Shows</h1>
+    <table>
+        <tr>
+            <td>ID</td>
+            <td>Title</td>
+            <td>Network</td>
+            <td>Release Date</td>
+            <td>Action</td>
+        </tr>
+        {%for author in allauthors %}
+        <tr>
+            <td>{{shows.id}}</td>
+            <td>{{shows.title}}</td>
+            <td>{{shows.network}}</td>
+            <td>{{shows.releasedate}}</td>
+            <!-- <td><a href="/authors/{{author.id}}">view</a></td> -->
+        </tr>
+        {%endfor%}
+    </table>
+</body>
+
+</html>

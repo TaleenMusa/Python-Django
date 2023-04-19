@@ -1,0 +1,17 @@
+div {
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+    margin: 0 auto;
+}
+
+div h2 {
+    margin-top: 10rem;
+}
+
+.button {
+    border-radius: 5%;
+    width: 100px;
+    margin-top: 2rem;
+    margin-left: 1rem;
+}

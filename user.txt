@@ -1,0 +1,23 @@
+python manage.py makemigrations
+python manage.py migrate
+
+python manage.py shell
+(djangoPy3Env) C:\Users\dell\Desktop\python-stack\Python\django\fundamentals\django_intro\User>python manage.py shell
+Python 3.11.2 (tags/v3.11.2:878ead1, Feb  7 2023, 16:38:35) [MSC v.1934 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+
+from usersapp.models import User
+User.objects.create(first_name="yousef",last_name="labadi",email_address="labadi@gmail.com",age=29)
+User.objects.create(first_name="taleen",last_name="khoury",email_address="taleen@gmail.com",age=23)
+User.objects.create(first_name="ibrahim",last_name="hamdan",email_address="hamdan@gmail.com",age=26)
+User.objects.all()
+User.objects.get(id=3)
+User.objects.get(id=1)
+c=User.objects.get(id=3)
+c.last_name="pancakes"
+c.save()
+s=User.objects.get(id=2)
+s.delete()
+User.objects.all().order_by("first_name")
+User.objects.all().orde

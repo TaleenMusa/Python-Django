@@ -1,0 +1,58 @@
+>>> from app1.models import *
+>>> Dojo.objects.create(name='karate_dojo',city='manhattin',state='NY')
+<Dojo: Dojo object (1)>
+>>> Dojo.objects.create(name='jujutsu_dojo',city='LosAngelos',state='CL')
+<Dojo: Dojo object (2)>
+>>> Dojo.objects.create(name='judo_dojo',city='brooklyn',state='NY')
+<Dojo: Dojo object (3)>
+>>> c=Dojo.objects.get(id=1)
+>>> c.delete()
+(1, {'app1.Ninja': 0, 'app1.Dojo': 1})
+>>> c=Dojo.objects.get(id=2)
+>>> c.delete()
+(1, {'app1.Ninja': 0, 'app1.Dojo': 1})
+>>> c=Dojo.objects.get(id=3)
+>>> c.delete()
+(1, {'app1.Ninja': 0, 'app1.Dojo': 1})
+>>> Dojo.objects.create(name='karate_dojo',city='manhattin',state='NY')
+<Dojo: Dojo object (4)>
+>>> Dojo.objects.create(name='jujutsu_dojo',city='LosAngelos',state='CL')
+<Dojo: Dojo object (5)>
+>>> Dojo.objects.create(name='judo_dojo',city='brooklyn',state='NY')
+<Dojo: Dojo object (6)>
+>>> Ninja.objects.create(first_name='taleen',last_name='khoury',dojo=Dojo.objects.get(id=4))
+<Ninja: Ninja object (1)>
+>>> Ninja.objects.create(first_name='ibrahim',last_name='hamdan',dojo=Dojo.objects.get(id=4))
+<Ninja: Ninja object (2)>
+>>> Ninja.objects.create(first_name='elon',last_name='musk',dojo=Dojo.objects.get(id=4))
+<Ninja: Ninja object (3)>
+>>> Ninja.objects.create(first_name='jeff',last_name='bezos',dojo=Dojo.objects.get(id=5))
+<Ninja: Ninja object (4)>
+>>> Ninja.objects.create(first_name='mark',last_name='zuckerberg',dojo=Dojo.objects.get(id=5))
+<Ninja: Ninja object (5)>
+>>> Ninja.objects.create(first_name='cristiano',last_name='ronaldo',dojo=Dojo.objects.get(id=5))
+<Ninja: Ninja object (6)>
+>>> Ninja.objects.create(first_name='lionel',last_name='messi',dojo=Dojo.objects.get(id=6))
+<Ninja: Ninja object (7)>
+>>> Ninja.objects.create(first_name='amin',last_name='eid',dojo=Dojo.objects.get(id=6))
+<Ninja: Ninja object (8)>
+>>> Ninja.objects.create(first_name='lina',last_name='kilani',dojo=Dojo.objects.get(id=6))
+<Ninja: Ninja object (9)>
+>>> c=Dojo.objects.get(id=4)
+>>> c.ninjas.all()
+<QuerySet [<Ninja: Ninja object (1)>, <Ninja: Ninja object (2)>, <Ninja: Ninja object (3)>]>
+>>> c=Dojo.objects.get(id=6)
+>>> c.ninjas.all()
+<QuerySet [<Ninja: Ninja object (7)>, <Ninja: Ninja object (8)>, <Ninja: Ninja object (9)>]>
+>>> c=Ninja.objects.get(id=9)
+>>> c.dojo
+<Dojo: Dojo object (6)>
+>>> exit()
+
+python manage.py makemigrations
+python manage.py migrate
+
+
+from app1.models import *
+>>> Dojo.objects.create(name='taikwando_dojo',city='ramallah',state='RT')
+<Dojo: Dojo object (7)>
